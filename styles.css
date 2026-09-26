@@ -1,4 +1,8 @@
 /* layout design */
+:root {
+    --sidebar: #0a6682;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +21,6 @@
     grid-column: 2 / 3;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    /* background-color: gray; */
 }
 
 /* header top */
@@ -58,6 +61,7 @@
 .profile button {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .profile button:hover {
@@ -99,16 +103,53 @@
 }
 
 .content-btn button {
-    background-color: lightblue;
+    background-color: var(--sidebar);
     width: 60px;
     height: 30px;
     border-radius: 20%;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* sidebar design */
 .sidebar {
-    background-color: lightblue;
+    background-color: var(--sidebar);
     grid-row: 1 / 4;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    margin: 50px 0;
+    font-size: 20px;
+}
+
+.group1 span, .group2 span {
+    color: #fff;
+}
+
+.group1 .list, .group2 .list {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto 10px 15%;
+    gap: 15px;
+}
+
+.group1 {
+    margin-bottom: 50px;
+}
+
+.list a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.list a:visited {
+    color: white;
 }
 
 /* main design */

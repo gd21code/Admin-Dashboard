@@ -2,6 +2,8 @@
 :root {
     --sidebar: #1c7894;
     --main: #ddd;
+    --card: #fff;
+    --annouce: #eee;
 }
 
 * {
@@ -40,6 +42,7 @@
 .search input {
     border-radius: 5px;
     width: 250px;
+    background-color: var(--main);
 }
 
 .search button {
@@ -175,12 +178,23 @@
     padding: 10px;
 }
 
+.article h2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-column: 1 / -1;
+}
+
 .article .card {
     height: 175px;
-    background-color: #fff;
+    background-color: var(--card);
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
     border-left: 8px solid #ffa500;
+}
+
+.article .card:hover {
+    transform: scale(1.05);
 }
 
 .card p {
@@ -193,20 +207,40 @@
 }
 
 /* updates and announcements design */
-.announcement {
-    padding: 10px;
+.announcement, .trending {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    background-color: var(--annouce);
+    border-radius: 10px;
+    margin: 10px 10px 10px 0;
+    gap: 10px;
+    padding: 10px;
+}
+
+.announcement-card p {
+    padding: 10px;
+}
+
+.announcement-card p:nth-child(1) {
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .update {
-    background-color: gray;
-}
+    background-color: var(--card);
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
 
-.trending {
-    padding: 10px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .trend {
-    background-color: gray;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px;
+}
+
+.trend img {
+    grid-row: 1 / 3;
+}
+
+.trend p:nth-child(2) {
+    font-weight: bold;
 }
